@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>PermisFacile.be – Services Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    header {
+      background: linear-gradient(to right, #f9b233, #ffd75a);
+      color: #111;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .cta {
+      margin-top: 25px;
+      padding: 12px 28px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta:hover {
+      background: #333;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 70px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00000033;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .produits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border: 2px solid #f9b233;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+      text-align: left;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-yellow {
+      color: #f9b233;
+      font-size: 1.4em;
+      filter: drop-shadow(0 0 6px #f9b233);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+      color: #333;
+    }
+
+    ul li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      color: #f9b233;
+      font-size: 1.1rem;
+      filter: drop-shadow(0 0 4px #f9b233);
+    }
+
+    .prix {
+      font-size: 1.5rem;
+      color: #fff;
+      background: #f9b233;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ffd75a;
+    }
+
+    .avis-section {
+      background: #f4f4f4;
+      padding: 60px 20px;
+    }
+
+    .avis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .avis-card {
+      background: #fff;
+      border: 2px solid #ffd75a;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .avis-card p {
+      margin: 0 0 8px;
+    }
+
+    .pourquoi {
+      background: #fffaf3;
+      padding: 60px 20px;
+      border-top: 2px solid #f9b233;
+      border-bottom: 2px solid #f9b233;
+    }
+
+    .pourquoi h2 {
+      font-size: 2rem;
+      color: #f9b233;
+      margin-bottom: 20px;
+    }
+
+    .pourquoi p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background-color: #111;
+      color: #ccc;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="bebac80b-ca52-488b-9443-fb8a6e6cda4c.jpg" alt="Logo PermisFacile" class="logo" />
+    <h1>PermisFacile.be</h1>
+    <p>Passe ton permis en toute simplicité. Synthèse claire & simulateur complet.</p>
+    <a href="#services" class="cta" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">Voir nos services</a>
+  </header>
+
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="produits">
+      <div class="card">
+        <h3><i class="fas fa-book icon-yellow"></i> Synthèse Permis B</h3>
+        <ul>
+          <li>30 pages claires et efficaces</li>
+          <li>Les fautes graves bien signalées pour éviter les erreurs éliminatoires</li>
+          <li>Tout est expliqué simplement, sans termes compliqués</li>
+          <li>Gain de temps assuré, fini les gros manuels inutiles</li>
+        </ul>
+        <div class="prix">20€</div>
+        <a href="https://buy.stripe.com/6oE6qYb0H0ypcCs288" class="cta">Acheter</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-cogs icon-yellow"></i> Logiciel d'examen</h3>
+        <ul>
+          <li>Contient les questions types des examens pour les permis AM, B, C, D</li>
+          <li>Inclus des simulateurs d’examen réalistes</li>
+          <li>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</li>
+          <li>Mises à jour régulières pour rester à jour avec les examens officiels</li>
+        </ul>
+        <div class="prix">50€</div>
+        <a href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl" class="cta">Acheter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pourquoi">
+    <h2>Pourquoi nous ?</h2>
+    <p>Nous sommes les seuls à vous fournir l'essentiel pour réussir votre permis théorique rapidement et efficacement. Évitez les gros manuels inutiles et concentrez-vous sur ce qui compte vraiment !</p>
+  </section>
+
+  <section class="avis-section">
+    <h2>Avis clients</h2>
+    <div class="avis-grid">
+      <div class="avis-card">
+        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+        <p>"J’ai retrouvé le même genre de questions à l'examen grâce au logiciel. Merci !"</p>
+        <strong>— Karim</strong>
+      </div>
+      <div class="avis-card">
+        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+        <p>"La synthèse m’a fait gagner beaucoup de temps. Cela évite les gros manuels !"</p>
+        <strong>— Julie</strong>
+      </div>
+      <div class="avis-card">
+        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+        <p>"Claire, simple et efficace. J’ai tout retenu en 2 soirées grâce à la synthèse !"</p>
+        <strong>— Lina</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 PermisFacile.be – Tous droits réservés
+  </footer>
+</body>
+</html>
