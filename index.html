@@ -1,259 +1,748 @@
-
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>PermisFacile.be – Services Premium</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
-      color: #111;
-    }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PermisFacile.be — Réussis ton permis en toute confiance</title>
+<meta content="Logiciel complet d’entraînement au permis théorique avec toutes les catégories (AM, B, C, D, etc.), mêmes types de questions et images que l’examen officiel. Offre Black Friday : 99,99€ au lieu de 199,99€." name="description"/>
+<!-- OpenGraph -->
+<meta content="PermisFacile.be — Réussis ton permis en toute confiance" property="og:title"/>
+<meta content="Logiciel complet d’entraînement au permis théorique, toutes catégories, mêmes types de questions et images que l’examen officiel. Black Friday : 99,99€ au lieu de 199,99€." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.permisfacile.be" property="og:url"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9b233' d='M10 36h44l-3 12H13z'/%3E%3Cpath fill='%23111' d='M52 28H12l4-8h32z'/%3E%3Ccircle cx='20' cy='48' r='6' fill='%23111'/%3E%3Ccircle cx='44' cy='48' r='6' fill='%23111'/%3E%3C/svg%3E" rel="icon"/>
+<style>
+      :root{
+        --brand:#f9b233; /* jaune */
+        --brand-2:#ffd75a; /* jaune clair */
+        --bg:#ffffff;
+        --text:#111111;
+        --muted:#666;
+        --card:#fafafa;
+        --stroke:#f6c76a;
+        --ok:#10b981;
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+      a{color:inherit;text-decoration:none}
+      img{max-width:100%;display:block}
 
-    header {
-      background: linear-gradient(to right, #f9b233, #ffd75a);
-      color: #111;
-      padding: 60px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
+      /* Header / nav */
+      .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:50}
+      .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
+      #services{background:var(--brand-2);}
+      #services .section-title{max-width:1100px;margin:0 auto 22px;}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+      .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+      .brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#111;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+      .nav{display:flex;gap:18px}
+      .nav a{font-weight:600}
+      .cta{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:600;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease}
+      .cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
 
-    header p {
-      font-size: 1.2rem;
-    }
+      /* Hero */
+      header.hero{background:linear-gradient(90deg,var(--brand) 0%, var(--brand-2) 100%);padding:64px 20px 56px;text-align:center;position:relative;overflow:hidden}
+      header.hero h1{font-size:clamp(28px,3.6vw,48px);line-height:1.1;margin:0 0 14px}
+      header.hero p{font-size:clamp(16px,2.2vw,20px);color:#222;margin:0 0 22px}
+      .badges{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px}
+      .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#111;border-radius:999px;padding:10px 16px;font-size:14px;font-weight:700;border:1px solid var(--stroke);box-shadow:0 8px 24px rgba(0,0,0,.08), inset 0 0 0 2px rgba(255,215,90,.15);transition:transform .15s, box-shadow .2s}
+      .badge i{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111}
+      .badge:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.12)}
 
-    .cta {
-      margin-top: 25px;
-      padding: 12px 28px;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
+      /* Section shell */
+      section{padding:64px 20px}
+      .container{max-width:1100px;margin:0 auto}
+      .section-title{font-size:clamp(24px,3vw,34px);margin:0 0 22px}
+      .muted{color:var(--muted)}
+      .grid{display:grid;gap:22px}
+      @media(min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+      @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
 
-    .cta:hover {
-      background: #333;
-    }
+      /* Card */
+      .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.05);transition:transform .2s ease, box-shadow .3s ease}
+      .card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.10)}
+      .price{display:inline-flex;gap:10px;align-items:center;background:var(--brand);color:#111;font-weight:700;border-radius:10px;padding:8px 12px;box-shadow:0 0 0 4px #fff inset, 0 8px 24px rgba(250,200,50,.35)}
+      .price small{color:#b91c1c;text-decoration:line-through;font-weight:600}
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 70px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #00000033;
-    }
+      /* Video */
+      .video-wrap{border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15)}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+      /* Offer ribbon */
+      .offer{background:#fff9db;border:1px dashed var(--stroke);padding:16px;border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
 
-    .produits {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
+      /* Steps */
+      .steps{counter-reset:step}
+      .step{display:flex;gap:14px}
+      .step-number{counter-increment:step;width:36px;height:36px;border-radius:10px;background:#111;color:#fff;display:grid;place-items:center;font-weight:700}
+      .step-number::after{content:counter(step)}
 
-    .card {
-      background-color: #f9f9f9;
-      border: 2px solid #f9b233;
-      padding: 30px;
-      border-radius: 12px;
-      width: 320px;
-      transition: transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      position: relative;
-      text-align: left;
-    }
+      /* FAQ */
+      details{border:1px solid #eee;border-radius:12px;padding:16px;background:#fff}
+      details+details{margin-top:12px}
+      summary{font-weight:600;cursor:pointer}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
+      /* Footer */
+      footer{background:#111;color:#ddd}
+      footer .cols{display:grid;gap:18px;padding:34px 20px}
+      @media(min-width:900px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+      footer a{color:#fff;text-decoration:underline}
+      .sub{border-top:1px solid #2a2a2a;padding:16px 20px;font-size:14px;color:#aaa}
 
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      /* Subtle animation */
+      .float{animation:float 6s ease-in-out infinite}
+      @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 
-    .icon-yellow {
-      color: #f9b233;
-      font-size: 1.4em;
-      filter: drop-shadow(0 0 6px #f9b233);
-    }
+      /* ===== Car scene animations (hero) ===== */
+      .scene{position:relative;max-width:940px;margin:34px auto 0;height:160px}
+      .road{position:absolute;inset:auto 0 0 0;height:56px;background:#1a1a1a;border-radius:12px;box-shadow:inset 0 2px 0 rgba(255,255,255,.04),inset 0 -8px 0 #0d0d0d}
+      .road::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;background:repeating-linear-gradient(90deg,#fff 0 80px,transparent 80px 140px);transform:translateY(-50%);opacity:.85;animation:moveRoad 3s linear infinite}
+      .car{position:absolute;left:50%;bottom:38px;width:260px;transform:translateX(-50%);filter:drop-shadow(0 18px 22px rgba(0,0,0,.25));animation:bob 2.8s ease-in-out infinite}
+      .car svg{display:block;width:100%;height:auto}
+      .wheel{transform-box:fill-box;transform-origin:50% 50%;animation:rotateWheel 1s linear infinite}
+      @keyframes moveRoad{from{background-position-x:0}to{background-position-x:-220px}}
+      @keyframes rotateWheel{to{transform:rotate(360deg)}}
+      @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-6px)}}
+          .cta-light{background:#fff;color:#111;border:1px solid var(--stroke);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+      .cta-light:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,.12)}
+      .price{font-size:16px}
+      .price .amount{font-size:18px;font-weight:700}
+      /* buyzone */
+      .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:8px}
+      .price{font-size:15px}
+      .price small{font-size:14px}
+      .price .amount{font-size:19px;line-height:1;font-weight:800}
+      .feature{padding-left:4px;list-style:disc inside;font-size:15px;line-height:1.45}
+      /* overrides: hide road */
+      .road{display:none!important}
+      /* neutral list bullets */
+      .li-check{display:flex;align-items:flex-start;gap:10px}
+      .li-icon{flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#111;margin-top:10px}
+      .features{display:grid;gap:10px;margin:0 0 12px 0;padding:0;list-style:none}
+      /* services cards */
+      #services .card{border:2px solid var(--stroke);padding:28px;}
+      #services h3{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+      #services ul.features{margin-bottom:18px}
+      #services .price{background:var(--brand);padding:10px 14px;border-radius:8px;display:inline-block;font-weight:700;}
+      #services .price small{color:#b91c1c;text-decoration:line-through;margin-right:6px;font-size:15px}
+      #services .price .amount{font-size:18px;font-weight:800}
+      #services .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:12px}
+      #services .cta{width:100%;justify-content:center}
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+      /* ===== Services section (match mock) ===== */
+      #services .grid.cols-2{gap:28px}
+      .service-card{background:#fff;border:2px solid var(--stroke);border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+      .service-title{display:flex;align-items:center;gap:12px;margin:0 0 10px}
+      .service-title .hicon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;
+        background:linear-gradient(135deg,var(--brand-2),var(--brand));color:#111;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+      .features{list-style:none;margin:0 0 18px 0;padding:0;display:grid;gap:12px}
+      .feature{display:flex;gap:10px;align-items:flex-start}
+      .feature .tick{flex:0 0 auto;width:18px;height:18px;border-radius:999px;background:#10b981;display:grid;place-items:center;margin-top:3px;
+        box-shadow:inset 0 -2px 0 rgba(0,0,0,.1)}
+      .feature .tick svg{width:12px;height:12px;fill:#fff;display:block}
+      .price-pill{background:linear-gradient(0deg,var(--brand) 0%, var(--brand-2) 100%);border:0;border-radius:11px;padding:12px 16px;
+        text-align:center;font-weight:800;letter-spacing:.2px;box-shadow:0 12px 28px rgba(250,200,50,.35), 0 0 0 1px rgba(0,0,0,.05) inset;margin:4px 0 12px}
+      .price-pill .old{color:#d61f1f;text-decoration:line-through;font-weight:800;margin-right:8px}
+      .price-pill .new{font-size:20px}
+      .buyzone{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:8px}
 
-    ul li {
-      margin-bottom: 10px;
-      padding-left: 24px;
-      position: relative;
-      color: #333;
-    }
 
-    ul li::before {
-      content: "✔️";
-      position: absolute;
-      left: 0;
-      color: #f9b233;
-      font-size: 1.1rem;
-      filter: drop-shadow(0 0 4px #f9b233);
-    }
+/* ===== Ultra Promo flash styles ===== */
+.flash-pack{position:relative;overflow:hidden;border:3px solid #111;background:#fff;box-shadow:0 16px 60px rgba(0,0,0,.18)}
+.flash-pack::before{
+  content:"⚡ ULTRA PROMO"; position:absolute; top:14px; right:-48px; transform:rotate(15deg);
+  background:linear-gradient(135deg,#fff 0%, var(--brand) 60%, var(--brand-2) 100%);
+  color:#111; font-weight:900; letter-spacing:.6px; padding:8px 48px; border:2px solid #111; border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.flash-glow{animation:flashGlow 1.4s ease-in-out infinite}
+@keyframes flashGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(249,178,51,.0), 0 14px 40px rgba(0,0,0,.10)}
+  50%{box-shadow:0 0 0 12px rgba(249,178,51,.15), 0 18px 54px rgba(0,0,0,.16)}
+}
+.pop{animation:pop .28s ease-out}
+@keyframes pop{from{transform:scale(.96)}to{transform:scale(1)}}
 
-    .prix {
-      font-size: 1.5rem;
-      color: #fff;
-      background: #f9b233;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 8px;
-      margin: 12px 0;
-      font-weight: bold;
-      box-shadow: 0 0 15px #ffd75a;
-    }
+.pricing-note{font-size:13px;color:#555;margin-top:-6px}
+.badge-best{display:inline-flex;align-items:center;gap:6px;background:#111;color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.badge-best i{background:#fff;color:#111;width:18px;height:18px;border-radius:999px;display:grid;place-items:center}
 
-    .avis-section {
-      background: #f4f4f4;
-      padding: 60px 20px;
-    }
+.cta-major{background:#111;color:#fff;border-radius:14px;padding:14px 18px;font-weight:800;display:inline-flex;gap:10px;align-items:center}
+        
+/* ===== Pack Ultra: star treatment ===== */
+.pack-hero{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,239,186,.7), rgba(255,250,230,.9));
+  border:3px solid #111;
+  transform: scale(1.02);
+  box-shadow: 0 20px 70px rgba(0,0,0,.20);
+}
+@media (min-width: 900px){
+  .pack-hero{ transform: scale(1.06); }
+}
+.pack-hero .service-title{
+  display:flex; align-items:center; gap:10px;
+}
+.pack-hero .service-title .bolt{
+  display:inline-flex; width:28px; height:28px; border-radius:8px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; align-items:center; justify-content:center; font-weight:900;
+  border:2px solid #111;
+}
+.badge-best{
+  display:inline-flex; gap:8px; align-items:center;
+  background: #ffcc00;
+  color:#111; border:2px solid #111; border-radius:999px; padding:6px 12px; font-weight:900;
+}
+.badge-best i{}
 
-    .avis-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
+.pulse{ animation: promoPulse 1.6s ease-in-out infinite; }
+@keyframes promoPulse{
+  0%{ box-shadow:0 0 0 0 rgba(255,204,0,.0) }
+  50%{ box-shadow:0 0 0 14px rgba(255,204,0,.22) }
+  100%{ box-shadow:0 0 0 0 rgba(255,204,0,.0) }
+}
+.cta-pack{
+  background: linear-gradient(135deg, #ffe066, #ffbf00);
+  color:#111; border:2px solid #111; border-radius:14px; font-weight:900;
+}
+.cta-pack i{ margin-right:8px;}
+.trust-note{ display:block; margin-top:8px; font-size:13px; color:#333; font-weight:700 }
 
-    .avis-card {
-      background: #fff;
-      border: 2px solid #ffd75a;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+      .nav a{
+        background:#000;
+        color:#fff !important;
+        padding:8px 16px;
+        border-radius:10px;
+        margin-left:10px;
+        display:inline-block;
+      }
+      .nav a.cta{
+        background:#000;
+        color:#fff !important;
+      }
 
-    .avis-card p {
-      margin: 0 0 8px;
-    }
+      .topbar-inner{justify-content:space-between;}
+      .nav{display:flex;gap:12px;}
+      .nav a{margin-left:0;}
+      .nav a.cta i{margin-right:6px;}
+      .hero .actions::after{}
+      .hero .blackfriday-btn{
+         background:#000;
+         color:#ffce4f;
+         padding:12px 22px;
+         border-radius:12px;
+         font-weight:600;
+         display:inline-block;
+         margin-top:18px;
+      }
 
-    .pourquoi {
-      background: #fffaf3;
-      padding: 60px 20px;
-      border-top: 2px solid #f9b233;
-      border-bottom: 2px solid #f9b233;
-    }
+      .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
+      .brand{margin-right:auto;}
+      .nav{margin-left:auto;display:flex;gap:12px;}
 
-    .pourquoi h2 {
-      font-size: 2rem;
-      color: #f9b233;
-      margin-bottom: 20px;
-    }
+      .topbar-inner{padding:12px 0 !important; width:100%; max-width:100%; }
+      .brand{margin-left:20px !important;}
+      .nav{margin-right:20px !important;}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+/* Promo memo: same size as other cards, subtle glow */
+.service-card.promo{position:relative;box-shadow:0 10px 30px rgba(249,178,51,.20)}
+.service-card.promo::after{
+  content:"🔥 -50% cette semaine";
+  position:absolute; top:14px; right:14px;
+  background:linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; border:2px solid #111; border-radius:999px;
+  font-weight:900; font-size:11px; padding:6px 10px; letter-spacing:.2px;
+}
+.service-card.promo:hover{box-shadow:0 14px 40px rgba(249,178,51,.32)}
+</style><style>
+/* Keep badge away from the title */
+.service-card.promo .service-title{padding-right:130px}
+.service-card.promo{position:relative}
+/* Refine badge size/placement */
+.service-card.promo::after{
+  top:10px !important;
+  right:10px !important;
+  font-size:11px !important;
+  padding:5px 9px !important;
+  line-height:1 !important;
+  border-width:1px !important;
+}
+</style><style>
+/* Aligner prix + bouton en bas des cartes */
+#services .grid,
+#services .grid.cols-3 { align-items: stretch; }
+#services .service-card { display:flex; flex-direction:column; }
+#services .service-card .buyzone { margin-top:auto; }
+</style><style>
+/* Badge promo discret et espacé du titre */
+.service-card.promo{position:relative}
+.service-card.promo .service-title{padding-right:130px}
+.service-card.promo::after{
+  content:"🔥 -50% pendant 2 semaines";
+  position:absolute; top:10px; right:10px;
+  background:linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#111; border:1px solid #111; border-radius:999px;
+  font-weight:800; font-size:11px; padding:5px 9px; line-height:1;
+}
+</style>
+<style>
+  /* === Overrides: product cards sizing & grid === */
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    gap: 16px !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+  }
+  .service-card {
+    max-width: 380px !important;  /* ~ largeur d'une porte */
+    margin: 0 auto !important;
+  }
+  /* Reduce excessive padding so cards feel compact */
+  .service-card .features { margin-top: 8px !important; }
+  .service-card .buyzone { margin-top: 10px !important; }
+  .price-pill { transform: none !important; }
+</style>
+<style>
+/* ====== PermisFacile product cards (high-contrast, pro) ====== */
+.pf-grid{
+  display:grid; gap:20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1100px; margin: 0 auto;
+}
+.pf-card{
+  border:2px solid #F8C246; background:#fff; border-radius:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  padding:20px; position:relative;
+}
+.pf-card .pf-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.pf-ico{
+  width:28px; height:28px; border:2px solid #F8C246; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:16px; color:#222; background:#FFF9E7;
+}
+.pf-title{ font-weight:800; font-size:1.35rem; margin:0; }
+.pf-chip{position:absolute;top:6px;right:10px;font-size:.7rem;padding:3px 8px;border:2px solid #F5A200;border-radius:10px;background:#FFF4CC;font-weight:700;transform:translateY(-4px);}
+.pf-list{ list-style:none; padding:0; margin:10px 0 18px 0; }
+.pf-list li{ display:flex; gap:10px; align-items:flex-start; margin:10px 0; }
+.pf-tick svg{ width:18px; height:18px; flex:0 0 18px; }
+.pf-price{
+  display:inline-flex; gap:10px; align-items:center; margin:8px 0 16px 0;
+  background:#FFC94A; padding:10px 18px; border-radius:12px; font-weight:800;
+  box-shadow:0 4px 0 rgba(0,0,0,.1);
+}
+.pf-price .old{ text-decoration:line-through; color:#e53935 !important; font-weight:700; }
+.pf-btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; background:#fff; border:2px solid #111; border-radius:14px;
+  padding:12px 14px; font-weight:800; text-decoration:none; color:#111;
+  box-shadow:0 2px 0 rgba(0,0,0,.9);
+}
+.pf-note{ font-size:.9rem; color:#777; margin-top:10px; display:flex; align-items:center; gap:6px; }
+.pf-note .bolt{ font-size:1rem; }
+@media (min-width: 980px){
+  .pf-grid{ grid-template-columns: repeat(3, minmax(320px, 1fr)); }
+}
+</style>
+<style>
+  /* High-contrast tweaks */
+  .pf-card{ border-color:#F5A200 !important; box-shadow:0 6px 18px rgba(0,0,0,.08) !important; }
+  .pf-ico{ border-color:#F5A200 !important; background:#FFF4CC !important; }
+  .pf-chip{position:absolute;top:6px;right:10px;font-size:.7rem;padding:3px 8px;border:2px solid #F5A200;border-radius:10px;background:#FFF4CC;font-weight:700;transform:translateY(-4px);}
+  .pf-title{ color:#0F172A !important; }
+  .pf-list span{ color:#111 !important; }
+  .pf-price{ background:#FFC107 !important; box-shadow:0 5px 0 rgba(0,0,0,.15) !important; }
+  .pf-price .old{ text-decoration:line-through; color:#e53935 !important; font-weight:700; }
+  /* Pro black buttons */
+  .pf-btn{ background:#000 !important; color:#fff !important; border-color:#000 !important; box-shadow:0 3px 0 rgba(0,0,0,.7) !important; }
+  .pf-btn:hover{ transform:translateY(-1px); box-shadow:0 4px 0 rgba(0,0,0,.8) !important; }
+  .pf-btn:active{ transform:translateY(0); box-shadow:0 2px 0 rgba(0,0,0,.7) !important; }
+  /* Tick icon: green circle with white check (more pro) */
+  .pf-tick svg{ width:18px; height:18px; }
+</style>
+<style>
+  #btn-pack-20{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    margin-top:10px !important;
+    width:100% !important;
+  }
+</style>
+<style>
+  #pf-pack{
+    border:3px solid #F5A200 !important;
+    box-shadow:0 8px 22px rgba(245,162,0,0.35) !important;
+    transform:scale(1.02);
+  }
+</style>
 
-    .pourquoi p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #333;
-    }
+<style>
+#promo-banner{
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  padding:10px 0;
+}
+.bf-pill{
+  background:#F5A200;
+  color:#111;
+  padding:5px 10px;
+  border-radius:8px;
+  margin-right:8px;
+  animation: pulse 1.2s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+</style>
 
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #111;
-      color: #ccc;
-      font-size: 1rem;
-    }
-  </style>
+
+<style>
+/* === Pack Black Friday : centré + plus vendu doré === */
+#pf-pack-bf{
+  border:3px solid #FFD700 !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.22) !important;
+  background:radial-gradient(circle at top, #FFF7C2 0%, #FFFFFF 55%);
+}
+#pf-pack-bf .pf-ico{
+  border-color:#FFD700 !important;
+  background:#FFF1A6 !important;
+}
+#pf-pack-bf .pf-price{
+  background:#FFD700 !important;
+}
+.pf-best-chip{
+  background:linear-gradient(135deg,#FFF7C2,#FFD700);
+  border-color:#111;
+  color:#111;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-size:.7rem;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.pf-best-chip i{
+  font-size:.75rem;
+}
+@media (min-width: 900px){
+  /* Centre le pack Black Friday sur la grille */
+  .pf-grid #pf-pack-bf{
+    grid-column:1 / -1;
+    max-width:420px;
+    margin:0 auto 10px auto;
+  }
+}
+</style>
+
 </head>
 <body>
-  <header>
-    <img src="bebac80b-ca52-488b-9443-fb8a6e6cda4c.jpg" alt="Logo PermisFacile" class="logo" />
-    <h1>PermisFacile.be</h1>
-    <p>Passe ton permis en toute simplicité. Synthèse claire & simulateur complet.</p>
-    <a href="#services" class="cta" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); return false;">Voir nos services</a>
-  </header>
-
-  <section id="services">
-    <h2>Nos Services</h2>
-    <div class="produits">
-      <div class="card">
-        <h3><i class="fas fa-book icon-yellow"></i> Synthèse Permis B</h3>
-        <ul>
-          <li>30 pages claires et efficaces</li>
-          <li>Les fautes graves bien signalées pour éviter les erreurs éliminatoires</li>
-          <li>Tout est expliqué simplement, sans termes compliqués</li>
-          <li>Gain de temps assuré, fini les gros manuels inutiles</li>
-        </ul>
-        <div class="prix">20€</div>
-        <a href="https://buy.stripe.com/6oE6qYb0H0ypcCs288" class="cta">Acheter</a>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-cogs icon-yellow"></i> Logiciel d'examen</h3>
-        <ul>
-          <li>Contient les questions types des examens pour les permis AM, B, C, D</li>
-          <li>Inclus des simulateurs d’examen réalistes</li>
-          <li>Avec des conseils concrets pour éviter de refaire les mêmes erreurs</li>
-          <li>Mises à jour régulières pour rester à jour avec les examens officiels</li>
-        </ul>
-        <div class="prix">50€</div>
-        <a href="https://buy.stripe.com/eVa5mU4Cjdlb5a05kl" class="cta">Acheter</a>
-      </div>
+<div id="promo-banner">
+  <a href="#services">
+    <span class="bf-pill">
+      <span>-50% BLACK FRIDAY</span>
+    </span>
+    <span>
+      Le logiciel complet d’entraînement est à <strong>99,99€ au lieu de 199,99€</strong> – Offre limitée sur PermisFacile.be.
+    </span>
+  </a>
+</div>
+<body>
+<!-- Top navigation -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <a aria-label="PermisFacile.be — accueil" href="#">PermisFacile.be</a>
     </div>
-  </section>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#comment">Comment ça marche</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#services"><i class="fa-solid fa-lock"></i>Acheter maintenant</a>
+    </nav>
+  </div>
+</div>
+<!-- Hero -->
+<header class="hero">
+<div class="container">
+<h1>Réussis ton permis théorique<br/>avec un seul logiciel complet</h1>
+<p>Un <strong>logiciel d’entraînement</strong> reprend toutes les catégories d’examen (AM, B, C, D, etc.) avec les mêmes types de questions et images que l’examen officiel.
+          Offre Black Friday : 99,99€ au lieu de 199,99€, paiement sécurisé via Stripe.</p>
+<div style="margin-top:16px">
+<a class="cta" href="#services">Voir nos services</a>
+        <a href="#services" class="blackfriday-btn">🔥 Offre Black Friday</a>
+</div>
+<div aria-hidden="true" class="scene">
+<div class="car">
+<svg aria-label="Voiture qui roule" role="img" viewbox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="g1" x1="0" x2="1">
+<stop offset="0" stop-color="#ffd75a"></stop>
+<stop offset="1" stop-color="#f9b233"></stop>
+</lineargradient>
+</defs>
+<!-- Car body -->
+<path d="M40 140h300c12 0 24-8 28-20l10-28c3-10 12-18 22-20l26-6c8-2 14 2 14 10v46c0 10-8 18-18 18H40z" fill="url(#g1)" stroke="#111" stroke-width="4"></path>
+<!-- Windows -->
+<path d="M96 104h96l26-30h-88z" fill="#eaf4ff" stroke="#111" stroke-width="4"></path>
+<path d="M226 104h76l10-30h-60z" fill="#eaf4ff" stroke="#111" stroke-width="4"></path>
+<!-- Lights -->
+<circle cx="360" cy="128" fill="#fff2b2" r="8" stroke="#111" stroke-width="3"></circle>
+<circle cx="52" cy="128" fill="#ffe08a" r="7" stroke="#111" stroke-width="3"></circle>
+<!-- Wheels -->
+<g class="wheel">
+<circle cx="128" cy="160" fill="#222" r="30" stroke="#111" stroke-width="6"></circle>
+<circle cx="128" cy="160" fill="#444" r="14"></circle>
+<rect fill="#777" height="56" width="4" x="126" y="132"></rect>
+</g>
+<g class="wheel">
+<circle cx="312" cy="160" fill="#222" r="30" stroke="#111" stroke-width="6"></circle>
+<circle cx="312" cy="160" fill="#444" r="14"></circle>
+<rect fill="#777" height="56" width="4" x="310" y="132"></rect>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- Promo / vidéo -->
+<section aria-labelledby="titre-video">
+<div class="container grid cols-2">
+<div>
+<h2 class="section-title" id="titre-video">Découvre en 60 secondes</h2>
+<p class="muted">Présentation rapide de la méthode et des contenus.</p>
+<div class="video-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="340" src="https://www.youtube.com/embed/ACF5MK_aX9E" title="Présentation PermisFacile.be" width="100%"></iframe>
+</div>
+</div>
+<ul class="grid" style="margin-top:18px">
+<li class="card"> Contenu clair et efficace</li>
+<li class="card"> Mises a jour régulières</li>
+<li class="card"> Focus sur les fautes éliminatoires</li>
+</ul>
+<div style="margin-top:16px">
+</div>
+</div>
 
-  <section class="pourquoi">
-    <h2>Pourquoi nous ?</h2>
-    <p>Nous sommes les seuls à vous fournir l'essentiel pour réussir votre permis théorique rapidement et efficacement. Évitez les gros manuels inutiles et concentrez-vous sur ce qui compte vraiment !</p>
-  </section>
+</section>
+<!-- Services / Produits -->
+<section aria-labelledby="titre-services" id="services">
+  <h2 class="section-title" id="titre-services">Offre Black Friday : logiciel complet</h2>
+  <div class="pf-grid">
+    <article class="pf-card" id="pf-logiciel">
+      <span class="pf-chip pf-best-chip"><i class="fa-solid fa-crown"></i> Offre Black Friday</span>
+      <div class="pf-head">
+        <div class="pf-ico"><i class="fa-solid fa-computer"></i></div>
+        <h3 class="pf-title">Logiciel complet d’entraînement au permis</h3>
+      </div>
+      <ul class="pf-list">
+        <li>
+          <span class="pf-tick">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg>
+          </span>
+          <span>Couvre toutes les catégories d’examen : AM, B, C, D, etc.</span>
+        </li>
+        <li>
+          <span class="pf-tick">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg>
+          </span>
+          <span>Reprend les mêmes types de questions et des images similaires à l’examen officiel.</span>
+        </li>
+        <li>
+          <span class="pf-tick">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg>
+          </span>
+          <span>Mode “examen blanc” pour s’entraîner dans les mêmes conditions que le jour J.</span>
+        </li>
+        <li>
+          <span class="pf-tick">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg>
+          </span>
+          <span>Accès illimité : tu peux t’entraîner autant de fois que tu veux.</span>
+        </li>
+        <li>
+          <span class="pf-tick">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M9.2 12.8l-1.9-1.9-1.3 1.3 3.2 3.2 7-7-1.3-1.3z" fill="#fff"/></svg>
+          </span>
+          <span>Pensé pour viser <strong>100% de réussite</strong> si tu t’entraînes sérieusement avec le logiciel.</span>
+        </li>
+      </ul>
+      <div class="pf-price">
+        <span class="old">199,99€</span>
+        <span>99,99€</span>
+      </div>
+      <a class="pf-btn" href="https://buy.stripe.com/7sYeVd1979pC7Iraft7Zu0b" id="btn-logiciel">
+        <i class="fa-solid fa-lock"></i> Acheter le logiciel maintenant
+      </a>
+      <p class="pf-note">
+        <span class="bolt">⚡</span>
+        <span>Offre Black Friday limitée : logiciel complet au prix réduit de 99,99€ au lieu de 199,99€.</span>
+      </p>
+    </article>
+  </div>
+</section>
+<!-- Comment ça marche -->
+<section aria-labelledby="titre-steps" id="comment" style="background:#fffaf3;border-block:1px solid var(--stroke)">
+<div class="container">
+<h2 class="section-title" id="titre-steps">Comment ça marche ?</h2>
+<div class="grid">
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Achète en ligne</strong>
+<p class="muted">Paiement sécurisé par Stripe en quelques secondes.</p>
+</div>
+</div>
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Accède à ton logiciel</strong>
+<p class="muted">Accès immédiat au logiciel d’entraînement après paiement.</p>
+</div>
+</div>
+<div class="step card">
+<div class="step-number"></div>
+<div>
+<strong>Entraîne-toi efficacement</strong>
+<p class="muted">Travaille avec les mêmes types de questions et d’images que l’examen officiel, jusqu’à être prêt.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ (social proof raisonné au lieu d'avis) -->
+<section aria-labelledby="titre-faq" id="faq">
+<div class="container">
+<h2 class="section-title" id="titre-faq">FAQ</h2>
+<details>
+<summary>Le paiement est-il vraiment sécurisé ?</summary>
+<p>Oui. Le paiement est traité par Stripe, un prestataire de paiement reconnu. Nous ne stockons aucune donnée bancaire sur le site.</p>
+</details>
+<details>
+<summary>Quand recevrai-je mes fichiers ?</summary>
+<p>Immédiatement après paiement : tu reçois l’accès au logiciel d’entraînement ainsi qu’un e‑mail de confirmation.</p>
+</details>
+<details>
+<summary>Les contenus sont-ils à jour ?</summary>
+<p>Nous effectuons des mises à jour régulières des synthèses lorsque c'est nécessaire.</p>
+</details>
+<details>
+<summary>Comment vous contacter ?</summary>
+<p>Par e‑mail à <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>. Nous répondons généralement sous 24h ouvrées.</p>
+</details>
+</div>
+</section>
+<!-- Bande confiance -->
+<section aria-label="Garantie et conformité" style="padding-top:0">
+<div class="container card" role="note">
+<p style="margin:0"><i class="fa-solid fa-circle-info"></i>
+<strong>Transparence :</strong> pas d'abonnement ni de frais cachés. TVA incluse si applicable. 
+          <strong>Besoin d'aide ?</strong> Écris-nous : <a href="mailto:permisfacilebe@gmail.com">permisfacilebe@gmail.com</a>.
+        </p>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container cols">
+<div>
+<h4>PermisFacile.be</h4>
+<p class="muted">Outils simples et efficaces pour réussir ton permis théorique.</p>
+<div class="badges" style="justify-content:flex-start">
+<span class="badge"><i class="fa-solid fa-lock"></i> Stripe</span>
+<span class="badge"><i class="fa-solid fa-cloud-arrow-down"></i> Accès immédiat</span>
+</div>
+</div>
+<div>
+<h4>Aide</h4>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+<li><a href="#faq">FAQ</a></li>
+<li><a href="mailto:permisfacilebe@gmail.com">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Légal</h4>
+<ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+</ul><li><a href="mentions-legales.html">Mentions légales</a></li>
+<li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
 
-  <section class="avis-section">
-    <h2>Avis clients</h2>
-    <div class="avis-grid">
-      <div class="avis-card">
-        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-        <p>"J’ai retrouvé le même genre de questions à l'examen grâce au logiciel. Merci !"</p>
-        <strong>— Karim</strong>
-      </div>
-      <div class="avis-card">
-        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-        <p>"La synthèse m’a fait gagner beaucoup de temps. Cela évite les gros manuels !"</p>
-        <strong>— Julie</strong>
-      </div>
-      <div class="avis-card">
-        <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-        <p>"Claire, simple et efficace. J’ai tout retenu en 2 soirées grâce à la synthèse !"</p>
-        <strong>— Lina</strong>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 PermisFacile.be – Tous droits réservés
-  </footer>
+</div>
+</div>
+<div class="sub">© 2025 PermisFacile.be — Tous droits réservés</div>
+</footer>
+<!-- FAQ structured data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question","name": "Le paiement est-il vraiment sécurisé ?","acceptedAnswer": {"@type": "Answer","text": "Oui, le paiement est traité par Stripe. Aucune donnée bancaire n'est stockée sur notre site."}},
+        {"@type": "Question","name": "Quand recevrai-je mes fichiers ?","acceptedAnswer": {"@type": "Answer","text": "Immédiatement après paiement via un lien de téléchargement et un e‑mail de confirmation."}},
+        {"@type": "Question","name": "Les contenus sont-ils à jour ?","acceptedAnswer": {"@type": "Answer","text": "Nous effectuons des mises à jour régulières si nécessaire."}},
+        {"@type": "Question","name": "Comment vous contacter ?","acceptedAnswer": {"@type": "Answer","text": "Par e‑mail à permisfacilebe@gmail.com. Réponse sous 24h ouvrées en général."}}
+      ]
+    }
+    </script>
+<!-- Accessibilité : réduit les animations si demandé par l'utilisateur -->
+<script>
+      const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (media.matches) {
+        document.querySelectorAll('.wheel').forEach(w=>w.style.animation='none');
+        const road = document.querySelector('.road');
+        if (road) road.style.animation='none';
+      }
+    </script>
+<script>
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if(id.length > 1){
+            const target = document.querySelector(id);
+            if(target){
+              e.preventDefault();
+              target.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+          }
+        });
+      });
+    </script>
+<script>
+  // Smooth scroll + visual cue
+  (function(){
+    function slideCue(el){
+      var box = el.querySelector('.container') || el;
+      box.classList.remove('section-enter');
+      void box.offsetWidth;
+      box.classList.add('section-enter');
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href');
+        if(id && id.length > 1){
+          var target = document.querySelector(id);
+          if(target){
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            slideCue(target);
+          }
+        }
+      });
+    });
+  })();
+</script>
 </body>
-</html>
+</body></html>
